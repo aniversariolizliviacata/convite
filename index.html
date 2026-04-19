@@ -106,8 +106,8 @@
     .gifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .gift-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.24s, box-shadow 0.24s; }
     .gift-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-    .gift-img-wrap { margin: 16px 16px 0; background: var(--cream); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; }
-    .gift-img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .gift-img-wrap { margin: 16px 16px 0; background: var(--cream); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; padding: 8px; }
+    .gift-img { width: 100%; aspect-ratio: 1; object-fit: contain; }
     .gift-body { padding: 18px 20px 22px; text-align: center; }
     .gift-num { font-family: var(--body); font-size: 11px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
     .gift-name { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--text); margin-top: 6px; line-height: 1.2; }
@@ -120,6 +120,9 @@
     .gift-pix-label { font-family: var(--body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
     .gift-pix-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--blush); border: 1px solid var(--rose-lt); border-radius: 999px; padding: 7px 16px; font-family: var(--body); font-size: 13px; font-weight: 700; color: var(--rose); cursor: pointer; transition: all 0.2s; width: 100%; justify-content: center; }
     .gift-pix-btn:hover { background: var(--rose); color: #fff; border-color: var(--rose); }
+
+    .pix-footer-note { text-align: center; margin-top: 52px; padding-top: 36px; border-top: 1px solid var(--border); }
+    .pix-footer-text { font-family: var(--body); font-size: 17px; color: var(--text2); font-style: italic; max-width: 480px; margin: 0 auto; line-height: 1.6; }
 
     /* FOOTER */
     .footer { padding: 48px 0 56px; text-align: center; background: var(--cream); border-top: 1px solid var(--border); }
@@ -272,13 +275,6 @@
           </p>
         </div>
 
-        <div class="pix-banner">
-          <span class="pix-label">Chave Pix · CPF</span>
-          <div class="pix-copy-row">
-            <span class="pix-key">105.103.566-05</span>
-            <button class="pix-copy-btn" onclick="this.textContent='✓ Copiado!';navigator.clipboard.writeText('10510356605');setTimeout(()=>this.textContent='Copiar',2000)">Copiar</button>
-          </div>
-        </div>
 
         <div class="gifts-grid">
 
@@ -287,7 +283,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 01</p>
               <h3 class="gift-name">Kit Sensorial Inicial</h3>
-              <p class="gift-price">R$ 118,14</p>
               <div class="qr-wrap"><img src="imagens/qrcode_01.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -302,12 +297,11 @@
             <div class="gift-body">
               <p class="gift-num">Presente 02</p>
               <h3 class="gift-name">Kit Criatividade Manual</h3>
-              <p class="gift-price">R$ 154,18</p>
               <div class="qr-wrap"><img src="imagens/qrcode_02.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
                 <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406154.185802BR5901N6001C6224052002kitcriatividademan6304CDC7')">📋 Copiar código Pix</button>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406159.095802BR5901N6001C6224052002kitcriatividademan63040ED7')">📋 Copiar código Pix</button>
               </div>
             </div>
           </article>
@@ -317,12 +311,11 @@
             <div class="gift-body">
               <p class="gift-num">Presente 03</p>
               <h3 class="gift-name">Kit Arte Pintura</h3>
-              <p class="gift-price">R$ 129,89</p>
               <div class="qr-wrap"><img src="imagens/qrcode_03.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
                 <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406129.895802BR5901N6001C6220051630kitartepintura630408F8')">📋 Copiar código Pix</button>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406130.615802BR5901N6001C6220051603kitartepintura63044081')">📋 Copiar código Pix</button>
               </div>
             </div>
           </article>
@@ -332,7 +325,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 04</p>
               <h3 class="gift-name">Kit Lógica e Coordenação</h3>
-              <p class="gift-price">R$ 118,97</p>
               <div class="qr-wrap"><img src="imagens/qrcode_04.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -347,7 +339,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 05</p>
               <h3 class="gift-name">Kit Educação Base</h3>
-              <p class="gift-price">R$ 107,98</p>
               <div class="qr-wrap"><img src="imagens/qrcode_05.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -362,7 +353,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 06</p>
               <h3 class="gift-name">Kit Princesas Criativas</h3>
-              <p class="gift-price">R$ 162,79</p>
               <div class="qr-wrap"><img src="imagens/qrcode_06.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -377,7 +367,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 07</p>
               <h3 class="gift-name">Kit Faz de Conta</h3>
-              <p class="gift-price">R$ 177,14</p>
               <div class="qr-wrap"><img src="imagens/qrcode_07.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -392,7 +381,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 08</p>
               <h3 class="gift-name">Kit Construção e Criatividade</h3>
-              <p class="gift-price">R$ 168,89</p>
               <div class="qr-wrap"><img src="imagens/qrcode_08.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -407,7 +395,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 09</p>
               <h3 class="gift-name">Kit Cientista</h3>
-              <p class="gift-price">R$ 162,97</p>
               <div class="qr-wrap"><img src="imagens/qrcode_09.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -422,7 +409,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 10</p>
               <h3 class="gift-name">Kit Motor e Estratégia</h3>
-              <p class="gift-price">R$ 160,89</p>
               <div class="qr-wrap"><img src="imagens/qrcode_10.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -437,7 +423,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 11</p>
               <h3 class="gift-name">Kit Artes Completo</h3>
-              <p class="gift-price">R$ 174,09</p>
               <div class="qr-wrap"><img src="imagens/qrcode_11.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -452,7 +437,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 12</p>
               <h3 class="gift-name">Kit Escolar Criativo</h3>
-              <p class="gift-price">R$ 119,06</p>
               <div class="qr-wrap"><img src="imagens/qrcode_12.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -467,7 +451,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 13</p>
               <h3 class="gift-name">Kit Montessoriano</h3>
-              <p class="gift-price">R$ 158,00</p>
               <div class="qr-wrap"><img src="imagens/qrcode_13.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -482,7 +465,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 14</p>
               <h3 class="gift-name">Kit Tecnologia Infantil</h3>
-              <p class="gift-price">R$ 151,59</p>
               <div class="qr-wrap"><img src="imagens/qrcode_14.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -497,7 +479,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 15</p>
               <h3 class="gift-name">Kit Diversão Completa</h3>
-              <p class="gift-price">R$ 203,70</p>
               <div class="qr-wrap"><img src="imagens/qrcode_15.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -512,7 +493,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 16</p>
               <h3 class="gift-name">Kit Pacote Divertido</h3>
-              <p class="gift-price">R$ 90,00</p>
               <div class="qr-wrap"><img src="imagens/qrcode_16.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -527,7 +507,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 17</p>
               <h3 class="gift-name">Kit Coordenação Fina</h3>
-              <p class="gift-price">R$ 132,98</p>
               <div class="qr-wrap"><img src="imagens/qrcode_17.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -542,7 +521,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 18</p>
               <h3 class="gift-name">Kit Narrativa e Imaginação</h3>
-              <p class="gift-price">R$ 133,13</p>
               <div class="qr-wrap"><img src="imagens/qrcode_18.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -557,7 +535,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 19</p>
               <h3 class="gift-name">Kit Mix Educativo</h3>
-              <p class="gift-price">R$ 147,07</p>
               <div class="qr-wrap"><img src="imagens/qrcode_19.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -572,7 +549,6 @@
             <div class="gift-body">
               <p class="gift-num">Presente 20</p>
               <h3 class="gift-name">Kit Premium Festa</h3>
-              <p class="gift-price">R$ 230,17</p>
               <div class="qr-wrap"><img src="imagens/qrcode_20.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
@@ -583,6 +559,15 @@
           </article>
 
         </div>
+
+        <div class="pix-footer-note">
+          <p class="pix-footer-text">Caso prefira não usar o QR code ou o Pix Copia-e-cola, você também pode enviar diretamente pela chave:</p>
+          <div class="pix-copy-row" style="max-width:400px; margin: 12px auto 0;">
+            <span class="pix-key">105.103.566-05</span>
+            <button class="pix-copy-btn" onclick="this.textContent='✓ Copiado!';navigator.clipboard.writeText('10510356605');setTimeout(()=>this.textContent='Copiar',2000)">Copiar</button>
+          </div>
+        </div>
+
       </div>
     </section>
 
