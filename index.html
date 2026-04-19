@@ -124,6 +124,10 @@
     .pix-footer-note { text-align: center; margin-top: 52px; padding-top: 36px; border-top: 1px solid var(--border); }
     .pix-footer-text { font-family: var(--body); font-size: 17px; color: var(--text2); font-style: italic; max-width: 480px; margin: 0 auto; line-height: 1.6; }
 
+    .pix-free-box { text-align: center; margin: 0 auto 48px; max-width: 520px; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px 26px; box-shadow: var(--shadow-sm); }
+    .pix-free-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .pix-free-text { font-family: var(--body); font-size: 16px; color: var(--text2); line-height: 1.5; font-style: italic; }
+
     /* FOOTER */
     .footer { padding: 48px 0 56px; text-align: center; background: var(--cream); border-top: 1px solid var(--border); }
     .footer-script { font-family: var(--script); font-size: 52px; color: var(--gold); line-height: 0.95; }
@@ -275,89 +279,44 @@
           </p>
         </div>
 
+        <!-- Pix valor livre -->
+        <div class="pix-free-box">
+          <p class="pix-free-title">Prefere enviar um valor à sua escolha?</p>
+          <p class="pix-free-text">Use a chave abaixo e envie o valor que quiser diretamente pelo seu banco.</p>
+          <div class="pix-copy-row" style="max-width:400px; margin: 14px auto 0;">
+            <span class="pix-key">105.103.566-05</span>
+            <button class="pix-copy-btn" onclick="this.textContent='✓ Copiado!';navigator.clipboard.writeText('10510356605');setTimeout(()=>this.textContent='Copiar',2000)">Copiar</button>
+          </div>
+        </div>
 
         <div class="gifts-grid">
 
           <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/01kitsensorialinicial.png" alt="Kit Sensorial Inicial"></div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/20kitpremiumfesta.png" alt="Kit Premium Festa"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 01</p>
-              <h3 class="gift-name">Kit Sensorial Inicial</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_01.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Premium Festa</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_20.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
                 <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406118.145802BR5901N6001C6224052001kitsensorialinicia63048D85')">📋 Copiar código Pix</button>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406230.175802BR5901N6001C6221051720kitpremiumfesta6304C314')">📋 Copiar código Pix</button>
               </div>
             </div>
           </article>
 
+
+
           <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/02kitcriatividademanual.png" alt="Kit Criatividade Manual"></div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/15kitdiversaocompleta.png" alt="Kit Diversão Completa"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 02</p>
-              <h3 class="gift-name">Kit Criatividade Manual</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_02.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Diversão Completa</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_15.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
                 <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406159.095802BR5901N6001C6224052002kitcriatividademan63040ED7')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/03kitartepintura.png" alt="Kit Arte Pintura"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 03</p>
-              <h3 class="gift-name">Kit Arte Pintura</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_03.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406130.615802BR5901N6001C6220051603kitartepintura63044081')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/04kitlogicacoordenacao.png" alt="Kit Lógica e Coordenação"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 04</p>
-              <h3 class="gift-name">Kit Lógica e Coordenação</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_04.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406118.975802BR5901N6001C6224052004kitlogicacoordenac63047A5F')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/05kiteducacaobase.png" alt="Kit Educação Base"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 05</p>
-              <h3 class="gift-name">Kit Educação Base</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_05.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406107.985802BR5901N6001C6221051705kiteducacaobase63048B1E')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/06kitprincesascriativas.png" alt="Kit Princesas Criativas"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 06</p>
-              <h3 class="gift-name">Kit Princesas Criativas</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_06.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406162.795802BR5901N6001C6224052006kitprincesascriati6304841D')">📋 Copiar código Pix</button>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406203.705802BR5901N6001C6224052015kitdiversaocomplet630480CE')">📋 Copiar código Pix</button>
               </div>
             </div>
           </article>
@@ -365,7 +324,7 @@
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/07kitfazdeconta.png" alt="Kit Faz de Conta"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 07</p>
+              <p class="gift-num">Presente 03</p>
               <h3 class="gift-name">Kit Faz de Conta</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_07.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -377,9 +336,23 @@
           </article>
 
           <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/11kitartescompleto.png" alt="Kit Artes Completo"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 04</p>
+              <h3 class="gift-name">Kit Artes Completo</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_11.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406174.095802BR5901N6001C6222051811kitartescompleto63043FE0')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/08kitconstrucaocriatividade.png" alt="Kit Construção e Criatividade"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 08</p>
+              <p class="gift-num">Presente 05</p>
               <h3 class="gift-name">Kit Construção e Criatividade</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_08.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -393,7 +366,7 @@
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/09kitcientista.png" alt="Kit Cientista"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 09</p>
+              <p class="gift-num">Presente 06</p>
               <h3 class="gift-name">Kit Cientista</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_09.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -405,9 +378,23 @@
           </article>
 
           <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/06kitprincesascriativas.png" alt="Kit Princesas Criativas"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 07</p>
+              <h3 class="gift-name">Kit Princesas Criativas</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_06.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406162.795802BR5901N6001C6224052006kitprincesascriati6304841D')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/10kitmotorestrategia.png" alt="Kit Motor e Estratégia"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 10</p>
+              <p class="gift-num">Presente 08</p>
               <h3 class="gift-name">Kit Motor e Estratégia</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_10.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -419,29 +406,15 @@
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/11kitartescompleto.png" alt="Kit Artes Completo"></div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/02kitcriatividademanual.png" alt="Kit Criatividade Manual"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 11</p>
-              <h3 class="gift-name">Kit Artes Completo</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_11.png" alt="QR Pix"></div>
+              <p class="gift-num">Presente 09</p>
+              <h3 class="gift-name">Kit Criatividade Manual</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_02.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
                 <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406174.095802BR5901N6001C6222051811kitartescompleto63043FE0')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/12kitescolarcriativo.png" alt="Kit Escolar Criativo"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 12</p>
-              <h3 class="gift-name">Kit Escolar Criativo</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_12.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406119.065802BR5901N6001C6224052012kitescolarcriativo63043C57')">📋 Copiar código Pix</button>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406159.095802BR5901N6001C6224052002kitcriatividademan63040ED7')">📋 Copiar código Pix</button>
               </div>
             </div>
           </article>
@@ -449,7 +422,7 @@
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/13kitmontessoriano.png" alt="Kit Montessoriano"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 13</p>
+              <p class="gift-num">Presente 10</p>
               <h3 class="gift-name">Kit Montessoriano</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_13.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -463,7 +436,7 @@
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/14kittecnologiainfantil.png" alt="Kit Tecnologia Infantil"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 14</p>
+              <p class="gift-num">Presente 11</p>
               <h3 class="gift-name">Kit Tecnologia Infantil</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_14.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -475,65 +448,9 @@
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/15kitdiversaocompleta.png" alt="Kit Diversão Completa"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 15</p>
-              <h3 class="gift-name">Kit Diversão Completa</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_15.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406203.705802BR5901N6001C6224052015kitdiversaocomplet630480CE')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/16kitpacotedivertido.png" alt="Kit Pacote Divertido"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 16</p>
-              <h3 class="gift-name">Kit Pacote Divertido</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_16.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX011110510356605520400005303986540590.005802BR5901N6001C6224052016kitpacotedivertido63040BDB')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/17kitcoordenacaofina.png" alt="Kit Coordenação Fina"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 17</p>
-              <h3 class="gift-name">Kit Coordenação Fina</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_17.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406132.985802BR5901N6001C6224052017kitcoordenacaofina6304E3F8')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/18kitnarrativaimaginacao.png" alt="Kit Narrativa e Imaginação"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 18</p>
-              <h3 class="gift-name">Kit Narrativa e Imaginação</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_18.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406133.135802BR5901N6001C6224052018kitnarrativaimagin63046099')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/19kitmixeducativo.png" alt="Kit Mix Educativo"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 19</p>
+              <p class="gift-num">Presente 12</p>
               <h3 class="gift-name">Kit Mix Educativo</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_19.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -545,15 +462,113 @@
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/20kitpremiumfesta.png" alt="Kit Premium Festa"></div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/18kitnarrativaimaginacao.png" alt="Kit Narrativa e Imaginação"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 20</p>
-              <h3 class="gift-name">Kit Premium Festa</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_20.png" alt="QR Pix"></div>
+              <p class="gift-num">Presente 13</p>
+              <h3 class="gift-name">Kit Narrativa e Imaginação</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_18.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
               <div class="gift-pix-section">
                 <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406230.175802BR5901N6001C6221051720kitpremiumfesta6304C314')">📋 Copiar código Pix</button>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406133.135802BR5901N6001C6224052018kitnarrativaimagin63046099')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/17kitcoordenacaofina.png" alt="Kit Coordenação Fina"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 14</p>
+              <h3 class="gift-name">Kit Coordenação Fina</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_17.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406132.985802BR5901N6001C6224052017kitcoordenacaofina6304E3F8')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/03kitartepintura.png" alt="Kit Arte Pintura"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 15</p>
+              <h3 class="gift-name">Kit Arte Pintura</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_03.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406130.615802BR5901N6001C6220051603kitartepintura63044081')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/12kitescolarcriativo.png" alt="Kit Escolar Criativo"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 16</p>
+              <h3 class="gift-name">Kit Escolar Criativo</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_12.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406119.065802BR5901N6001C6224052012kitescolarcriativo63043C57')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/04kitlogicacoordenacao.png" alt="Kit Lógica e Coordenação"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 17</p>
+              <h3 class="gift-name">Kit Lógica e Coordenação</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_04.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406118.975802BR5901N6001C6224052004kitlogicacoordenac63047A5F')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/01kitsensorialinicial.png" alt="Kit Sensorial Inicial"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 18</p>
+              <h3 class="gift-name">Kit Sensorial Inicial</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_01.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406118.145802BR5901N6001C6224052001kitsensorialinicia63048D85')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/05kiteducacaobase.png" alt="Kit Educação Base"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 19</p>
+              <h3 class="gift-name">Kit Educação Base</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_05.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406107.985802BR5901N6001C6221051705kiteducacaobase63048B1E')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/16kitpacotedivertido.png" alt="Kit Pacote Divertido"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 20</p>
+              <h3 class="gift-name">Kit Pacote Divertido</h3>
+              <div class="qr-wrap"><img src="imagens/qrcode_16.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX011110510356605520400005303986540590.005802BR5901N6001C6224052016kitpacotedivertido63040BDB')">📋 Copiar código Pix</button>
               </div>
             </div>
           </article>
