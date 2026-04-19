@@ -15,7 +15,6 @@
       --cream2:   #faf3ec;
       --white:    #ffffff;
       --gold:     #b08040;
-      --gold2:    #c99a50;
       --gold-lt:  #e8d0a8;
       --rose:     #b05a70;
       --rose-lt:  #e8c8d0;
@@ -26,7 +25,6 @@
       --shadow-sm: 0 4px 16px rgba(176,128,64,0.10);
       --shadow-md: 0 12px 36px rgba(176,128,64,0.14);
       --shadow-lg: 0 24px 64px rgba(176,128,64,0.18);
-
       --script:  'Great Vibes', cursive;
       --serif:   'Playfair Display', serif;
       --body:    'Cormorant Garamond', serif;
@@ -34,607 +32,102 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--text);
-      font-family: var(--body);
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
+    body { background: var(--cream); color: var(--text); font-family: var(--body); font-size: 18px; line-height: 1.6; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1200px, calc(100% - 40px)); margin-inline: auto; }
 
-    .wrap {
-      width: min(1200px, calc(100% - 40px));
-      margin-inline: auto;
-    }
+    /* TOPBAR */
+    .topbar { position: sticky; top: 0; z-index: 200; background: rgba(253,248,243,0.90); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; }
+    .brand { display: flex; flex-direction: column; gap: 2px; }
+    .brand-eyebrow { font-family: var(--body); font-size: 11px; letter-spacing: 0.38em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .brand-name { font-family: var(--script); font-size: 36px; color: var(--gold); line-height: 1; }
+    .nav { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a { font-family: var(--body); font-size: 15px; letter-spacing: 0.10em; font-weight: 600; color: var(--text2); padding: 8px 16px; border-radius: 999px; transition: all 0.2s; }
+    .nav a:hover { background: var(--blush); color: var(--rose); }
 
-    /* ─── TOPBAR ─── */
-    .topbar {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(253,248,243,0.90);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-    }
+    /* HERO */
+    .hero { padding: 56px 0 64px; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+    .hero-photo-wrap { border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
+    .hero-photo-wrap img { width: 100%; height: auto; display: block; }
+    .hero-copy { display: flex; flex-direction: column; gap: 0; }
+    .hero-kicker { font-family: var(--body); font-size: 12px; letter-spacing: 0.38em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+    .hero-names { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 40px); font-weight: 500; letter-spacing: 0.08em; color: var(--text); line-height: 1.05; white-space: nowrap; }
+    .hero-names em { color: var(--gold); font-style: normal; }
+    .hero-ages { font-family: var(--body); font-size: 15px; letter-spacing: 0.06em; color: var(--rose); font-weight: 600; margin-top: 8px; }
+    .hero-rule { width: 48px; height: 1px; background: var(--gold-lt); margin: 20px 0; }
+    .hero-info-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .hero-info-list li { display: flex; align-items: flex-start; gap: 12px; }
+    .info-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .hero-info-list div { display: flex; flex-direction: column; gap: 2px; }
+    .hero-info-list strong { font-family: var(--body); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+    .hero-info-list div, .hero-info-list li { font-family: var(--body); font-size: 18px; color: var(--text); line-height: 1.4; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
 
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-eyebrow {
-      font-family: var(--body);
-      font-size: 11px;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    .brand-name {
-      font-family: var(--script);
-      font-size: 36px;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav a {
-      font-family: var(--body);
-      font-size: 15px;
-      letter-spacing: 0.10em;
-      font-weight: 600;
-      color: var(--text2);
-      padding: 8px 16px;
-      border-radius: 999px;
-      transition: all 0.2s;
-    }
-
-    .nav a:hover {
-      background: var(--blush);
-      color: var(--rose);
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      padding: 56px 0 64px;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .hero-photo-wrap {
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
-    }
-
-    .hero-photo-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .hero-kicker {
-      font-family: var(--body);
-      font-size: 12px;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .hero-names {
-      font-family: var(--serif);
-      font-size: clamp(22px, 2.8vw, 40px);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--text);
-      line-height: 1.05;
-      white-space: nowrap;
-    }
-
-    .hero-names em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .hero-ages {
-      font-family: var(--body);
-      font-size: 15px;
-      letter-spacing: 0.06em;
-      color: var(--rose);
-      font-weight: 600;
-      margin-top: 8px;
-    }
-
-    .hero-rule {
-      width: 48px; height: 1px;
-      background: var(--gold-lt);
-      margin: 20px 0;
-    }
-
-    .hero-info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .hero-info-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .info-icon {
-      font-size: 18px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .hero-info-list div {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .hero-info-list strong {
-      font-family: var(--body);
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .hero-info-list div,
-    .hero-info-list li {
-      font-family: var(--body);
-      font-size: 18px;
-      color: var(--text);
-      line-height: 1.4;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    /* ─── PRINCESAS SECTION ─── */
-    .princesas {
-      padding: 80px 0 60px;
-      background: linear-gradient(to bottom, var(--cream) 0%, var(--cream2) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .princesas::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 1px; height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--border));
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 54px;
-    }
-
-    .section-kicker {
-      font-family: var(--body);
-      font-size: 12px;
-      letter-spacing: 0.40em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .section-script {
-      font-family: var(--script);
-      font-size: clamp(44px, 6vw, 68px);
-      color: var(--gold);
-      line-height: 0.95;
-    }
-
-    .section-body {
-      font-family: var(--body);
-      font-size: 20px;
-      line-height: 1.60;
-      color: var(--text2);
-      max-width: 680px;
-      margin: 14px auto 0;
-    }
-
-    /* ─── PRINCESAS CARDS ─── */
-    .princesas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .princesa-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-      transition: transform 0.28s ease, box-shadow 0.28s ease;
-    }
-
-    .princesa-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .princesa-card-top {
-      padding: 28px 28px 0;
-    }
-
-    .princesa-number {
-      font-family: var(--script);
-      font-size: 56px;
-      color: var(--gold-lt);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .princesa-name {
-      font-family: var(--serif);
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .princesa-age {
-      font-family: var(--body);
-      font-size: 13px;
-      letter-spacing: 0.30em;
-      text-transform: uppercase;
-      color: var(--rose);
-      font-weight: 700;
-      margin-top: 6px;
-    }
-
-    .princesa-divider {
-      width: 40px; height: 2px;
-      background: linear-gradient(to right, var(--gold-lt), transparent);
-      margin: 16px 0;
-    }
-
-    .princesa-story {
-      font-family: var(--body);
-      font-size: 18px;
-      line-height: 1.65;
-      color: var(--text2);
-      font-style: italic;
-    }
-
-    .princesa-card-bottom {
-      padding: 22px 28px 28px;
-    }
-
-    .princesa-emoji-bar {
-      display: flex;
-      gap: 8px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-
-    .princesa-tag {
-      background: var(--blush);
-      border: 1px solid var(--rose-lt);
-      border-radius: 999px;
-      padding: 5px 14px;
-      font-family: var(--body);
-      font-size: 14px;
-      color: var(--rose);
-      font-weight: 600;
-    }
-
-    /* ─── DETALHES ─── */
-    .detalhes {
-      padding: 72px 0;
-    }
-
-    .detalhes-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    .detalhe-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 32px 34px;
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .detalhe-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(to right, var(--gold-lt), var(--rose-lt));
-    }
-
-    .detalhe-icon {
-      font-size: 28px;
-      margin-bottom: 14px;
-    }
-
-    .detalhe-card h3 {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 16px;
-    }
-
-    .detalhe-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .detalhe-list li {
-      font-family: var(--body);
-      font-size: 18px;
-      color: var(--text);
-      line-height: 1.4;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .detalhe-list li::before {
-      content: '·';
-      color: var(--gold);
-      font-size: 22px;
-      line-height: 1.2;
-      flex-shrink: 0;
-    }
-
-    .detalhe-list strong {
-      color: var(--rose);
-    }
-
-    .detalhe-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-family: var(--body);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      transition: all 0.2s;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #fff;
-      box-shadow: 0 8px 22px rgba(176,128,64,0.22);
-    }
-
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 22px; border-radius: 999px; font-family: var(--body); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; transition: all 0.2s; border: 1px solid transparent; cursor: pointer; }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 8px 22px rgba(176,128,64,0.22); }
     .btn-gold:hover { background: #9a6e30; }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { background: var(--blush); color: var(--rose); border-color: var(--rose-lt); }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--border);
-    }
+    /* PRINCESAS */
+    .princesas { padding: 80px 0 60px; background: linear-gradient(to bottom, var(--cream) 0%, var(--cream2) 100%); position: relative; overflow: hidden; }
+    .princesas::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--border)); }
+    .section-header { text-align: center; margin-bottom: 54px; }
+    .section-kicker { font-family: var(--body); font-size: 12px; letter-spacing: 0.40em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; }
+    .section-script { font-family: var(--script); font-size: clamp(44px, 6vw, 68px); color: var(--gold); line-height: 0.95; }
+    .section-body { font-family: var(--body); font-size: 20px; line-height: 1.60; color: var(--text2); max-width: 680px; margin: 14px auto 0; }
+    .princesas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .princesa-card { background: var(--white); border: 1px solid var(--border); border-radius: 28px; box-shadow: var(--shadow-md); overflow: hidden; transition: transform 0.28s ease, box-shadow 0.28s ease; }
+    .princesa-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .princesa-card-top { padding: 28px 28px 0; }
+    .princesa-number { font-family: var(--script); font-size: 56px; color: var(--gold-lt); line-height: 1; margin-bottom: 4px; }
+    .princesa-name { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--text); }
+    .princesa-age { font-family: var(--body); font-size: 13px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--rose); font-weight: 700; margin-top: 6px; }
+    .princesa-divider { width: 40px; height: 2px; background: linear-gradient(to right, var(--gold-lt), transparent); margin: 16px 0; }
+    .princesa-story { font-family: var(--body); font-size: 18px; line-height: 1.65; color: var(--text2); font-style: italic; }
+    .princesa-card-bottom { padding: 22px 28px 28px; }
+    .princesa-emoji-bar { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
+    .princesa-tag { background: var(--blush); border: 1px solid var(--rose-lt); border-radius: 999px; padding: 5px 14px; font-family: var(--body); font-size: 14px; color: var(--rose); font-weight: 600; }
 
-    .btn-outline:hover {
-      background: var(--blush);
-      color: var(--rose);
-      border-color: var(--rose-lt);
-    }
+    /* PRESENTES */
+    .presentes { padding: 72px 0 80px; background: var(--cream2); }
 
-    /* ─── PRESENTES ─── */
-    .presentes {
-      padding: 72px 0 80px;
-      background: var(--cream2);
-    }
+    .pix-banner { text-align: center; margin: 0 auto 48px; max-width: 480px; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 18px 28px 20px; box-shadow: var(--shadow-sm); }
+    .pix-label { font-family: var(--body); font-size: 12px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--gold); font-weight: 700; display: block; margin-bottom: 10px; }
+    .pix-copy-row { display: flex; align-items: center; gap: 12px; background: var(--cream); border: 1px solid var(--border); border-radius: 999px; padding: 10px 10px 10px 20px; }
+    .pix-key { font-family: var(--body); font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: 0.06em; flex: 1; text-align: left; }
+    .pix-copy-btn { background: var(--gold); color: #fff; border: none; border-radius: 999px; padding: 8px 18px; font-family: var(--body); font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
+    .pix-copy-btn:hover { background: #9a6e30; }
 
-    .pix-banner {
-      text-align: center;
-      margin: 0 auto 48px;
-      max-width: 640px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 16px 28px;
-      box-shadow: var(--shadow-sm);
-      font-family: var(--body);
-      font-size: 18px;
-      color: var(--text);
-    }
+    .gifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .gift-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.24s, box-shadow 0.24s; }
+    .gift-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .gift-img-wrap { margin: 16px 16px 0; background: var(--cream); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; }
+    .gift-img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .gift-body { padding: 18px 20px 22px; text-align: center; }
+    .gift-num { font-family: var(--body); font-size: 11px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+    .gift-name { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--text); margin-top: 6px; line-height: 1.2; }
+    .gift-price { font-family: var(--body); font-size: 21px; font-weight: 700; color: var(--rose); margin-top: 8px; }
+    .qr-wrap { margin: 14px auto 0; max-width: 130px; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 8px; }
+    .qr-wrap img { width: 100%; border-radius: 8px; }
+    .gift-hint { font-family: var(--body); font-size: 13px; color: var(--text2); line-height: 1.4; margin-top: 8px; }
 
-    .pix-banner strong {
-      color: var(--rose);
-    }
+    .gift-pix-section { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
+    .gift-pix-label { font-family: var(--body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+    .gift-pix-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--blush); border: 1px solid var(--rose-lt); border-radius: 999px; padding: 7px 16px; font-family: var(--body); font-size: 13px; font-weight: 700; color: var(--rose); cursor: pointer; transition: all 0.2s; width: 100%; justify-content: center; }
+    .gift-pix-btn:hover { background: var(--rose); color: #fff; border-color: var(--rose); }
 
-    .gifts-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
+    /* FOOTER */
+    .footer { padding: 48px 0 56px; text-align: center; background: var(--cream); border-top: 1px solid var(--border); }
+    .footer-script { font-family: var(--script); font-size: 52px; color: var(--gold); line-height: 0.95; }
+    .footer-text { font-family: var(--body); font-size: 20px; color: var(--rose); margin-top: 10px; font-style: italic; }
+    .footer-hearts { font-size: 18px; color: var(--gold-lt); margin-top: 16px; letter-spacing: 0.4em; }
 
-    .gift-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.24s, box-shadow 0.24s;
-    }
-
-    .gift-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .gift-img-wrap {
-      margin: 16px 16px 0;
-      background: var(--cream);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .gift-img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-
-    .gift-body {
-      padding: 18px 20px 22px;
-      text-align: center;
-    }
-
-    .gift-num {
-      font-family: var(--body);
-      font-size: 11px;
-      letter-spacing: 0.30em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .gift-name {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text);
-      margin-top: 6px;
-      line-height: 1.2;
-    }
-
-    .gift-price {
-      font-family: var(--body);
-      font-size: 21px;
-      font-weight: 700;
-      color: var(--rose);
-      margin-top: 8px;
-    }
-
-    .qr-wrap {
-      margin: 14px auto 0;
-      max-width: 130px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 8px;
-    }
-
-    .qr-wrap img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .gift-hint {
-      font-family: var(--body);
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.4;
-      margin-top: 10px;
-    }
-
-    /* ─── FOOTER ─── */
-    .footer {
-      padding: 48px 0 56px;
-      text-align: center;
-      background: var(--cream);
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-script {
-      font-family: var(--script);
-      font-size: 52px;
-      color: var(--gold);
-      line-height: 0.95;
-    }
-
-    .footer-text {
-      font-family: var(--body);
-      font-size: 20px;
-      color: var(--rose);
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .footer-hearts {
-      font-size: 18px;
-      color: var(--gold-lt);
-      margin-top: 16px;
-      letter-spacing: 0.4em;
-    }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.35; transform: scaleY(1); }
-      50%       { opacity: 0.80; transform: scaleY(1.15); }
-    }
-
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media (max-width: 1100px) {
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-photo-wrap { max-width: 480px; }
@@ -642,7 +135,6 @@
       .princesas-grid { grid-template-columns: 1fr; gap: 20px; }
       .gifts-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 720px) {
       .topbar-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
       .nav { justify-content: flex-start; }
@@ -656,7 +148,6 @@
 </head>
 <body>
 
-  <!-- ═══ TOPBAR ═══ -->
   <header class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand">
@@ -673,70 +164,39 @@
 
   <main>
 
-    <!-- ═══ HERO ═══ -->
+    <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="wrap hero-inner">
-
         <div class="hero-copy">
           <p class="hero-kicker">Tudo que você precisa saber</p>
           <h1 class="hero-names">LIZ <em>·</em> LÍVIA <em>·</em> CATARINA</h1>
           <p class="hero-ages">5 anos · 3 anos · 3 anos</p>
           <div class="hero-rule"></div>
-
           <ul class="hero-info-list">
-            <li>
-              <span class="info-icon">📅</span>
-              <div>
-                <strong>Data</strong>
-                09 de Maio de 2026
-              </div>
-            </li>
-            <li>
-              <span class="info-icon">🕐</span>
-              <div>
-                <strong>Horário</strong>
-                Às 13h00
-              </div>
-            </li>
-            <li>
-              <span class="info-icon">📍</span>
-              <div>
-                <strong>Local</strong>
-                Fazenda Vista da Serra · Igarapé, MG
-              </div>
-            </li>
+            <li><span class="info-icon">📅</span><div><strong>Data</strong>09 de Maio de 2026</div></li>
+            <li><span class="info-icon">🕐</span><div><strong>Horário</strong>Às 13h00</div></li>
+            <li><span class="info-icon">📍</span><div><strong>Local</strong>Fazenda Vista da Serra · Igarapé, MG</div></li>
           </ul>
-
           <div class="hero-actions">
-            <a class="btn btn-gold" target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Fazenda+Vista+da+Serra+Igarape+MG">
-              📍 Abrir no Maps
-            </a>
-            <a class="btn btn-outline" target="_blank"
-              href="https://www.instagram.com/vistadaserraigarape/">
-              Instagram do Local
-            </a>
+            <a class="btn btn-gold" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fazenda+Vista+da+Serra+Igarape+MG">📍 Abrir no Maps</a>
+            <a class="btn btn-outline" target="_blank" href="https://www.instagram.com/vistadaserraigarape/">Instagram do Local</a>
           </div>
         </div>
-
         <div class="hero-photo-wrap">
           <img src="imagens/convite.png" alt="Convite das Princesas">
         </div>
-
       </div>
     </section>
 
-    <!-- ═══ AS PRINCESAS ═══ -->
+    <!-- AS PRINCESAS -->
     <section class="princesas" id="princesas">
       <div class="wrap">
         <div class="section-header">
           <p class="section-kicker">As Aniversariantes</p>
           <h2 class="section-script">Nossas três princesas</h2>
         </div>
-
         <div class="princesas-grid">
 
-          <!-- LIZ -->
           <article class="princesa-card">
             <div class="princesa-card-top">
               <div class="princesa-number">1</div>
@@ -744,41 +204,39 @@
               <div class="princesa-age">✨ 5 anos</div>
               <div class="princesa-divider"></div>
               <p class="princesa-story">
-                Nossa Lizita chegou ao mundo de um jeito inesquecível: às 6 da manhã, num parto humanizado — dentro de uma banheira — nos Estados Unidos. Foram 12 horas de trabalho que a mamãe nunca vai esquecer. Foi ali que ela jurou, com todas as letras, que nunca mais repetiria a experiência. 😂<br><br>
+                Nossa Lizita chegou ao mundo de um jeito inesquecível: às 22 horas da noite, num parto humanizado nos Estados Unidos. Foram 12 horas de trabalho que a mamãe nunca vai esquecer. Foi ali que ela jurou, com todas as letras, que nunca mais repetiria a experiência. 😂<br><br>
                 Mas que chegada! Liz nasceu cheia de garra, e desde o primeiro dia nos ensina tantas coisas extraordinárias.
               </p>
             </div>
             <div class="princesa-card-bottom">
               <div class="princesa-emoji-bar">
                 <span class="princesa-tag">🌟 5 aninhos</span>
-                <span class="princesa-tag">🇺🇸 Nascida nos EUA</span>
+                <span class="princesa-tag">🇺🇸 19-04-2021 Nascida nos EUA</span>
                 <span class="princesa-tag">💪 Parto humanizado</span>
               </div>
             </div>
           </article>
 
-          <!-- LÍVIA & CATARINA -->
           <article class="princesa-card">
             <div class="princesa-card-top">
               <div class="princesa-number">2</div>
               <div class="princesa-name">Lívia & Catarina</div>
-              <div class="princesa-age">🌸 3 anos — As Duplinha</div>
+              <div class="princesa-age">🌸 3 anos — A Duplinha</div>
               <div class="princesa-divider"></div>
               <p class="princesa-story">
-                A surpresa começou antes mesmo do nascimento: primeiro, a notícia de que havia uma vida crescendo. Depois, o choque de que eram <strong>DOIS</strong>. Sim, <em>dois meninos</em>.<br><br>
+                A surpresa começou antes mesmo do nascimento das nossas mexicaninhas: primeiro, a notícia de que havia uma vida crescendo. Depois, o choque de que eram <strong>DOIS</strong>. Sim, <em>dois meninos</em>.<br><br>
                 O universo guardava um segredo, ou um desejo, bem maior do que imaginávamos. Dois mundos novamente, em um só coração.<br><br>
               </p>
             </div>
             <div class="princesa-card-bottom">
               <div class="princesa-emoji-bar">
                 <span class="princesa-tag">💕 Gêmeas</span>
-                <span class="princesa-tag">🐦 Como Piu Piu & Frajola</span>
+                <span class="princesa-tag">🇲🇽 23-05-2023 Nascidas no México</span>
                 <span class="princesa-tag">💓 Dois coraçõezinhos</span>
               </div>
             </div>
           </article>
 
-          <!-- TODOS JUNTOS -->
           <article class="princesa-card">
             <div class="princesa-card-top">
               <div class="princesa-number">♡</div>
@@ -803,254 +261,324 @@
       </div>
     </section>
 
-    <!-- ═══ PRESENTES ═══ -->
+    <!-- PRESENTES -->
     <section class="presentes" id="presentes">
       <div class="wrap">
         <div class="section-header">
           <p class="section-kicker">Lista de Presentes</p>
-          <h2 class="section-script">Escolha um presente especial</h2>
+          <h2 class="section-script">Escolha um presente especial para nossas princesas</h2>
           <p class="section-body">
-            Após escolher o presente, escaneie o QR code Pix no banco de preferência para enviar com carinho.
+            Após escolher o presente, escaneie o QR code ou use o Pix Copia-e-cola no banco de preferência.
           </p>
         </div>
 
         <div class="pix-banner">
-          <strong>Chave Pix:</strong> CPF 105.103.566-05
+          <span class="pix-label">Chave Pix · CPF</span>
+          <div class="pix-copy-row">
+            <span class="pix-key">105.103.566-05</span>
+            <button class="pix-copy-btn" onclick="this.textContent='✓ Copiado!';navigator.clipboard.writeText('10510356605');setTimeout(()=>this.textContent='Copiar',2000)">Copiar</button>
+          </div>
         </div>
 
         <div class="gifts-grid">
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-01-kit-dentista.jpg" alt="Kit Dentista">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/01kitsensorialinicial.png" alt="Kit Sensorial Inicial"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 01</p>
-              <h3 class="gift-name">Kit Dentista</h3>
-              <p class="gift-price">R$ 59,00</p>
-              <div class="qr-wrap"><img src="imagens/qr-01.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Sensorial Inicial</h3>
+              <p class="gift-price">R$ 118,14</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_01.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406118.145802BR5901N6001C6224052001kitsensorialinicia63048D85')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-02-maleta-doutora.jpg" alt="Maleta Doutora">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/02kitcriatividademanual.png" alt="Kit Criatividade Manual"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 02</p>
-              <h3 class="gift-name">Maleta Doutora</h3>
-              <p class="gift-price">R$ 68,15</p>
-              <div class="qr-wrap"><img src="imagens/qr-02.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Criatividade Manual</h3>
+              <p class="gift-price">R$ 154,18</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_02.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406154.185802BR5901N6001C6224052002kitcriatividademan6304CDC7')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-03-laboratorio-luna.jpg" alt="Laboratório Luna">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/03kitartepintura.png" alt="Kit Arte Pintura"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 03</p>
-              <h3 class="gift-name">Laboratório Luna</h3>
-              <p class="gift-price">R$ 86,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-03.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Arte Pintura</h3>
+              <p class="gift-price">R$ 129,89</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_03.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406129.895802BR5901N6001C6220051630kitartepintura630408F8')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-04-laptop-barbie.jpg" alt="Laptop Barbie">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/04kitlogicacoordenacao.png" alt="Kit Lógica e Coordenação"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 04</p>
-              <h3 class="gift-name">Laptop Barbie</h3>
-              <p class="gift-price">R$ 63,69</p>
-              <div class="qr-wrap"><img src="imagens/qr-04.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Lógica e Coordenação</h3>
+              <p class="gift-price">R$ 118,97</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_04.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406118.975802BR5901N6001C6224052004kitlogicacoordenac63047A5F')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-05-camera-infantil.jpg" alt="Câmera Infantil">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/05kiteducacaobase.png" alt="Kit Educação Base"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 05</p>
-              <h3 class="gift-name">Câmera Infantil</h3>
-              <p class="gift-price">R$ 52,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-05.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Educação Base</h3>
+              <p class="gift-price">R$ 107,98</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_05.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406107.985802BR5901N6001C6221051705kiteducacaobase63048B1E')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-06-blocos-magneticos.jpg" alt="Blocos Magnéticos">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/06kitprincesascriativas.png" alt="Kit Princesas Criativas"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 06</p>
-              <h3 class="gift-name">Blocos Magnéticos</h3>
-              <p class="gift-price">R$ 83,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-06.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Princesas Criativas</h3>
+              <p class="gift-price">R$ 162,79</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_06.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406162.795802BR5901N6001C6224052006kitprincesascriati6304841D')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-07-kit-micangas.jpg" alt="Kit Miçangas">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/07kitfazdeconta.png" alt="Kit Faz de Conta"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 07</p>
-              <h3 class="gift-name">Kit Miçangas</h3>
-              <p class="gift-price">R$ 59,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-07.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Faz de Conta</h3>
+              <p class="gift-price">R$ 177,14</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_07.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406177.145802BR5901N6001C6219051507kitfazdeconta6304D044')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-08-memoria-princesas.jpg" alt="Memória Princesas">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/08kitconstrucaocriatividade.png" alt="Kit Construção e Criatividade"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 08</p>
-              <h3 class="gift-name">Memória Princesas</h3>
-              <p class="gift-price">R$ 29,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-08.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Construção e Criatividade</h3>
+              <p class="gift-price">R$ 168,89</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_08.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406168.895802BR5901N6001C6224052008kitconstrucaocriat6304ACF3')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-09-alfabeto-madeira.jpg" alt="Alfabeto Madeira">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/09kitcientista.png" alt="Kit Cientista"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 09</p>
-              <h3 class="gift-name">Alfabeto Madeira</h3>
-              <p class="gift-price">R$ 32,99</p>
-              <div class="qr-wrap"><img src="imagens/qr-09.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Cientista</h3>
+              <p class="gift-price">R$ 162,97</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_09.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406162.975802BR5901N6001C6218051409kitcientista6304D863')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-10-unicornio-glitter.jpg" alt="Unicórnio Glitter">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/10kitmotorestrategia.png" alt="Kit Motor e Estratégia"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 10</p>
-              <h3 class="gift-name">Unicórnio Glitter</h3>
-              <p class="gift-price">R$ 69,99</p>
-              <div class="qr-wrap"><img src="imagens/qr-10.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Motor e Estratégia</h3>
+              <p class="gift-price">R$ 160,89</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_10.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406160.895802BR5901N6001C6224052010kitmotorestrategia6304D3F9')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-11-maleta-princesas.jpg" alt="Maleta Princesas">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/11kitartescompleto.png" alt="Kit Artes Completo"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 11</p>
-              <h3 class="gift-name">Maleta Princesas</h3>
-              <p class="gift-price">R$ 52,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-11.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Artes Completo</h3>
+              <p class="gift-price">R$ 174,09</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_11.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406174.095802BR5901N6001C6222051811kitartescompleto63043FE0')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-12-pega-varetas.jpg" alt="Pega Varetas">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/12kitescolarcriativo.png" alt="Kit Escolar Criativo"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 12</p>
-              <h3 class="gift-name">Pega Varetas</h3>
-              <p class="gift-price">R$ 47,99</p>
-              <div class="qr-wrap"><img src="imagens/qr-12.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Escolar Criativo</h3>
+              <p class="gift-price">R$ 119,06</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_12.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406119.065802BR5901N6001C6224052012kitescolarcriativo63043C57')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-13-rolo-colorir.jpg" alt="Rolo de Colorir">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/13kitmontessoriano.png" alt="Kit Montessoriano"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 13</p>
-              <h3 class="gift-name">Rolo de Colorir</h3>
-              <p class="gift-price">R$ 44,20</p>
-              <div class="qr-wrap"><img src="imagens/qr-13.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Montessoriano</h3>
+              <p class="gift-price">R$ 158,00</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_13.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406158.005802BR5901N6001C6222051813kitmontessoriano6304569E')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-14-montessori-cores.jpg" alt="Montessori Cores">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/14kittecnologiainfantil.png" alt="Kit Tecnologia Infantil"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 14</p>
-              <h3 class="gift-name">Montessori Cores</h3>
-              <p class="gift-price">R$ 78,00</p>
-              <div class="qr-wrap"><img src="imagens/qr-14.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Tecnologia Infantil</h3>
+              <p class="gift-price">R$ 151,59</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_14.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406151.595802BR5901N6001C6224052014kittecnologiainfan6304BDA2')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-15-lancador-teia.jpg" alt="Lançador de Teia">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/15kitdiversaocompleta.png" alt="Kit Diversão Completa"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 15</p>
-              <h3 class="gift-name">Lançador de Teia</h3>
-              <p class="gift-price">R$ 78,50</p>
-              <div class="qr-wrap"><img src="imagens/qr-15.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Diversão Completa</h3>
+              <p class="gift-price">R$ 203,70</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_15.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406203.705802BR5901N6001C6224052015kitdiversaocomplet630480CE')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-16-kit-atividades-unicornio.jpg" alt="Atividades Unicórnio">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/16kitpacotedivertido.png" alt="Kit Pacote Divertido"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 16</p>
-              <h3 class="gift-name">Atividades Unicórnio</h3>
-              <p class="gift-price">R$ 49,99</p>
-              <div class="qr-wrap"><img src="imagens/qr-16.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Pacote Divertido</h3>
+              <p class="gift-price">R$ 90,00</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_16.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX011110510356605520400005303986540590.005802BR5901N6001C6224052016kitpacotedivertido63040BDB')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-17-massinha-mala.jpg" alt="Massinha Mala">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/17kitcoordenacaofina.png" alt="Kit Coordenação Fina"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 17</p>
-              <h3 class="gift-name">Massinha Mala</h3>
-              <p class="gift-price">R$ 59,99</p>
-              <div class="qr-wrap"><img src="imagens/qr-17.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Coordenação Fina</h3>
+              <p class="gift-price">R$ 132,98</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_17.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406132.985802BR5901N6001C6224052017kitcoordenacaofina6304E3F8')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
           <article class="gift-card">
-            <div class="gift-img-wrap">
-              <img class="gift-img" src="imagens/presente-18-unicornio-pintura.jpg" alt="Unicórnio Pintura">
-            </div>
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/18kitnarrativaimaginacao.png" alt="Kit Narrativa e Imaginação"></div>
             <div class="gift-body">
               <p class="gift-num">Presente 18</p>
-              <h3 class="gift-name">Unicórnio Pintura</h3>
-              <p class="gift-price">R$ 59,90</p>
-              <div class="qr-wrap"><img src="imagens/qr-18.png" alt="QR Pix"></div>
+              <h3 class="gift-name">Kit Narrativa e Imaginação</h3>
+              <p class="gift-price">R$ 133,13</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_18.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406133.135802BR5901N6001C6224052018kitnarrativaimagin63046099')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/19kitmixeducativo.png" alt="Kit Mix Educativo"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 19</p>
+              <h3 class="gift-name">Kit Mix Educativo</h3>
+              <p class="gift-price">R$ 147,07</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_19.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406147.075802BR5901N6001C6221051719kitmixeducativo63040E32')">📋 Copiar código Pix</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gift-card">
+            <div class="gift-img-wrap"><img class="gift-img" src="imagens/20kitpremiumfesta.png" alt="Kit Premium Festa"></div>
+            <div class="gift-body">
+              <p class="gift-num">Presente 20</p>
+              <h3 class="gift-name">Kit Premium Festa</h3>
+              <p class="gift-price">R$ 230,17</p>
+              <div class="qr-wrap"><img src="imagens/qrcode_20.png" alt="QR Pix"></div>
+              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
+              <div class="gift-pix-section">
+                <p class="gift-pix-label">Pix Copia-e-cola</p>
+                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406230.175802BR5901N6001C6221051720kitpremiumfesta6304C314')">📋 Copiar código Pix</button>
+              </div>
             </div>
           </article>
 
@@ -1067,6 +595,24 @@
       <p class="footer-hearts">✦ ✦ ✦</p>
     </div>
   </footer>
+
+  <script>
+    function copyPix(btn, code) {
+      navigator.clipboard.writeText(code).then(() => {
+        const original = btn.innerHTML;
+        btn.innerHTML = '✓ Copiado!';
+        btn.style.background = 'var(--rose)';
+        btn.style.color = '#fff';
+        btn.style.borderColor = 'var(--rose)';
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2500);
+      });
+    }
+  </script>
 
 </body>
 </html>
