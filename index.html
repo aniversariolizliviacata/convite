@@ -37,7 +37,6 @@
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(1200px, calc(100% - 40px)); margin-inline: auto; }
 
-    /* TOPBAR */
     .topbar { position: sticky; top: 0; z-index: 200; background: rgba(253,248,243,0.90); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
     .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; }
     .brand { display: flex; flex-direction: column; gap: 2px; }
@@ -47,7 +46,6 @@
     .nav a { font-family: var(--body); font-size: 15px; letter-spacing: 0.10em; font-weight: 600; color: var(--text2); padding: 8px 16px; border-radius: 999px; transition: all 0.2s; }
     .nav a:hover { background: var(--blush); color: var(--rose); }
 
-    /* HERO */
     .hero { padding: 56px 0 64px; }
     .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
     .hero-photo-wrap { border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
@@ -66,14 +64,12 @@
     .hero-info-list div, .hero-info-list li { font-family: var(--body); font-size: 18px; color: var(--text); line-height: 1.4; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
 
-    /* BUTTONS */
     .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 22px; border-radius: 999px; font-family: var(--body); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; transition: all 0.2s; border: 1px solid transparent; cursor: pointer; }
     .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 8px 22px rgba(176,128,64,0.22); }
     .btn-gold:hover { background: #9a6e30; }
     .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
     .btn-outline:hover { background: var(--blush); color: var(--rose); border-color: var(--rose-lt); }
 
-    /* PRINCESAS */
     .princesas { padding: 80px 0 60px; background: linear-gradient(to bottom, var(--cream) 0%, var(--cream2) 100%); position: relative; overflow: hidden; }
     .princesas::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--border)); }
     .section-header { text-align: center; margin-bottom: 54px; }
@@ -93,16 +89,13 @@
     .princesa-emoji-bar { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
     .princesa-tag { background: var(--blush); border: 1px solid var(--rose-lt); border-radius: 999px; padding: 5px 14px; font-family: var(--body); font-size: 14px; color: var(--rose); font-weight: 600; }
 
-    /* PRESENTES */
     .presentes { padding: 72px 0 80px; background: var(--cream2); }
-
     .pix-banner { text-align: center; margin: 0 auto 48px; max-width: 480px; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 18px 28px 20px; box-shadow: var(--shadow-sm); }
     .pix-label { font-family: var(--body); font-size: 12px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--gold); font-weight: 700; display: block; margin-bottom: 10px; }
     .pix-copy-row { display: flex; align-items: center; gap: 12px; background: var(--cream); border: 1px solid var(--border); border-radius: 999px; padding: 10px 10px 10px 20px; }
     .pix-key { font-family: var(--body); font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: 0.06em; flex: 1; text-align: left; }
     .pix-copy-btn { background: var(--gold); color: #fff; border: none; border-radius: 999px; padding: 8px 18px; font-family: var(--body); font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
     .pix-copy-btn:hover { background: #9a6e30; }
-
     .gifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .gift-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.24s, box-shadow 0.24s; }
     .gift-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
@@ -115,7 +108,6 @@
     .qr-wrap { margin: 14px auto 0; max-width: 130px; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 8px; }
     .qr-wrap img { width: 100%; border-radius: 8px; }
     .gift-hint { font-family: var(--body); font-size: 13px; color: var(--text2); line-height: 1.4; margin-top: 8px; }
-
     .gift-pix-section { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
     .gift-pix-label { font-family: var(--body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
     .gift-pix-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--blush); border: 1px solid var(--rose-lt); border-radius: 999px; padding: 7px 16px; font-family: var(--body); font-size: 13px; font-weight: 700; color: var(--rose); cursor: pointer; transition: all 0.2s; width: 100%; justify-content: center; }
@@ -123,18 +115,15 @@
 
     .pix-footer-note { text-align: center; margin-top: 52px; padding-top: 36px; border-top: 1px solid var(--border); }
     .pix-footer-text { font-family: var(--body); font-size: 17px; color: var(--text2); font-style: italic; max-width: 480px; margin: 0 auto; line-height: 1.6; }
-
     .pix-free-box { text-align: center; margin: 0 auto 48px; max-width: 520px; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px 26px; box-shadow: var(--shadow-sm); }
     .pix-free-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
     .pix-free-text { font-family: var(--body); font-size: 16px; color: var(--text2); line-height: 1.5; font-style: italic; }
 
-    /* FOOTER */
     .footer { padding: 48px 0 56px; text-align: center; background: var(--cream); border-top: 1px solid var(--border); }
     .footer-script { font-family: var(--script); font-size: 52px; color: var(--gold); line-height: 0.95; }
     .footer-text { font-family: var(--body); font-size: 20px; color: var(--rose); margin-top: 10px; font-style: italic; }
     .footer-hearts { font-size: 18px; color: var(--gold-lt); margin-top: 16px; letter-spacing: 0.4em; }
 
-    /* RESPONSIVE */
     @media (max-width: 1100px) {
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-photo-wrap { max-width: 480px; }
@@ -171,7 +160,6 @@
 
   <main>
 
-    <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="wrap hero-inner">
         <div class="hero-copy">
@@ -195,7 +183,6 @@
       </div>
     </section>
 
-    <!-- AS PRINCESAS -->
     <section class="princesas" id="princesas">
       <div class="wrap">
         <div class="section-header">
@@ -268,7 +255,6 @@
       </div>
     </section>
 
-    <!-- PRESENTES -->
     <section class="presentes" id="presentes">
       <div class="wrap">
         <div class="section-header">
@@ -279,7 +265,6 @@
           </p>
         </div>
 
-        <!-- Pix valor livre -->
         <div class="pix-free-box">
           <p class="pix-free-title">Prefere enviar um valor à sua escolha?</p>
           <p class="pix-free-text">Use a chave abaixo e envie o valor que quiser diretamente pelo seu banco.</p>
@@ -291,7 +276,6 @@
 
         <div class="gifts-grid">
 
-          <!-- 01 · R$ 365,63 · Kit Festa Divertida -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/16kitfestadivertida.png" alt="Kit Festa Divertida"></div>
             <div class="gift-body">
@@ -306,7 +290,6 @@
             </div>
           </article>
 
-          <!-- 02 · R$ 359,90 · Presente Moto Elétrica -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/12presentemotoeletrica.png" alt="Presente Moto Elétrica"></div>
             <div class="gift-body">
@@ -321,7 +304,6 @@
             </div>
           </article>
 
-          <!-- 03 · R$ 285,90 · Presente Barraca Rosa -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/21presentebarracarosa.png" alt="Presente Barraca Rosa"></div>
             <div class="gift-body">
@@ -336,7 +318,6 @@
             </div>
           </article>
 
-          <!-- 04 · R$ 230,17 · Kit Premium Festa -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/20kitpremiumfesta.png" alt="Kit Premium Festa"></div>
             <div class="gift-body">
@@ -351,7 +332,6 @@
             </div>
           </article>
 
-          <!-- 05 · R$ 203,70 · Kit Diversão Completa -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/15kitdiversaocompleta.png" alt="Kit Diversão Completa"></div>
             <div class="gift-body">
@@ -366,7 +346,6 @@
             </div>
           </article>
 
-          <!-- 06 · R$ 177,14 · Kit Faz de Conta -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/07kitfazdeconta.png" alt="Kit Faz de Conta"></div>
             <div class="gift-body">
@@ -381,7 +360,6 @@
             </div>
           </article>
 
-          <!-- 07 · R$ 174,09 · Kit Artes Completo -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/11kitartescompleto.png" alt="Kit Artes Completo"></div>
             <div class="gift-body">
@@ -396,7 +374,6 @@
             </div>
           </article>
 
-          <!-- 08 · R$ 168,89 · Kit Construção e Criatividade -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/08kitconstrucaocriatividade.png" alt="Kit Construção e Criatividade"></div>
             <div class="gift-body">
@@ -411,7 +388,6 @@
             </div>
           </article>
 
-          <!-- 09 · R$ 162,97 · Kit Cientista -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/09kitcientista.png" alt="Kit Cientista"></div>
             <div class="gift-body">
@@ -426,7 +402,6 @@
             </div>
           </article>
 
-          <!-- 10 · R$ 162,79 · Kit Princesas Criativas -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/06kitprincesascriativas.png" alt="Kit Princesas Criativas"></div>
             <div class="gift-body">
@@ -441,7 +416,6 @@
             </div>
           </article>
 
-          <!-- 11 · R$ 160,89 · Kit Motor e Estratégia -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/10kitmotorestrategia.png" alt="Kit Motor e Estratégia"></div>
             <div class="gift-body">
@@ -456,7 +430,6 @@
             </div>
           </article>
 
-          <!-- 12 · R$ 159,09 · Kit Criatividade Manual -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/02kitcriatividademanual.png" alt="Kit Criatividade Manual"></div>
             <div class="gift-body">
@@ -471,7 +444,6 @@
             </div>
           </article>
 
-          <!-- 13 · R$ 158,00 · Kit Montessoriano -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/13kitmontessoriano.png" alt="Kit Montessoriano"></div>
             <div class="gift-body">
@@ -486,7 +458,6 @@
             </div>
           </article>
 
-          <!-- 14 · R$ 151,59 · Kit Tecnologia Infantil -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/14kittecnologiainfantil.png" alt="Kit Tecnologia Infantil"></div>
             <div class="gift-body">
@@ -501,7 +472,6 @@
             </div>
           </article>
 
-          <!-- 15 · R$ 147,07 · Kit Mix Educativo -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/19kitmixeducativo.png" alt="Kit Mix Educativo"></div>
             <div class="gift-body">
@@ -516,27 +486,10 @@
             </div>
           </article>
 
-          <!-- 16 · R$ 133,13 · Kit Narrativa e Imaginação -->
-          <article class="gift-card">
-            <div class="gift-img-wrap"><img class="gift-img" src="imagens/18kitnarrativaimaginacao.png" alt="Kit Narrativa e Imaginação"></div>
-            <div class="gift-body">
-              <p class="gift-num">Presente 16</p>
-              <h3 class="gift-name">Kit Narrativa e Imaginação</h3>
-              <div class="qr-wrap"><img src="imagens/qrcode_18.png" alt="QR Pix"></div>
-              <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
-              <div class="gift-pix-section">
-                <p class="gift-pix-label">Pix Copia-e-cola</p>
-                <button class="gift-pix-btn" onclick="copyPix(this,'00020126330014BR.GOV.BCB.PIX0111105103566055204000053039865406133.135802BR5901N6001C6224052018kitnarrativaimagin63046099')">📋 Copiar código Pix</button>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- 18 · R$ 130,61 · Kit Arte Pintura -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/03kitartepintura.png" alt="Kit Arte Pintura"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 18</p>
+              <p class="gift-num">Presente 16</p>
               <h3 class="gift-name">Kit Arte Pintura</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_03.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -547,11 +500,10 @@
             </div>
           </article>
 
-          <!-- 19 · R$ 118,97 · Kit Lógica e Coordenação -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/04kitlogicacoordenacao.png" alt="Kit Lógica e Coordenação"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 19</p>
+              <p class="gift-num">Presente 17</p>
               <h3 class="gift-name">Kit Lógica e Coordenação</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_04.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
@@ -562,11 +514,10 @@
             </div>
           </article>
 
-          <!-- 21 · R$ 107,98 · Kit Educação Base -->
           <article class="gift-card">
             <div class="gift-img-wrap"><img class="gift-img" src="imagens/05kiteducacaobase.png" alt="Kit Educação Base"></div>
             <div class="gift-body">
-              <p class="gift-num">Presente 21</p>
+              <p class="gift-num">Presente 18</p>
               <h3 class="gift-name">Kit Educação Base</h3>
               <div class="qr-wrap"><img src="imagens/qrcode_05.png" alt="QR Pix"></div>
               <p class="gift-hint">Escaneie o QR Pix no seu banco.</p>
